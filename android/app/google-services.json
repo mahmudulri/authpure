@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "959704722972",
+    "project_id": "pure-cd74e",
+    "storage_bucket": "pure-cd74e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959704722972:android:6d7eef6cd572047db9b9d9",
+        "android_client_info": {
+          "package_name": "com.pure.sportstips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959704722972-cfvnch0tbbbae2levhnu0kar86gfo6ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pure.sportstips",
+            "certificate_hash": "7ccd52074eaa54ac18b12a7eb76da3f3cca94ffe"
+          }
+        },
+        {
+          "client_id": "959704722972-72rpf5n9fmpob2mnqautlu5cq3gn77pe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4WL4kctYaLDjoIaW0xHqt3XTU6LYcaMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959704722972-72rpf5n9fmpob2mnqautlu5cq3gn77pe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
