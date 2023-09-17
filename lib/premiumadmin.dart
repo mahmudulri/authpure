@@ -232,7 +232,7 @@ class _PremiumAdminState extends State<PremiumAdmin> {
                               // );
                             } else {
                               FirebaseFirestore.instance
-                                  .collection('PremiumTips')
+                                  .collection('true')
                                   .add({
                                 "legue": finaData_1,
                                 "team": finaData_2,
@@ -327,7 +327,7 @@ class _PremiumAdminState extends State<PremiumAdmin> {
                                 color: Color(0xff0F4C75).withOpacity(0.09),
                                 child: StreamBuilder(
                                   stream: FirebaseFirestore.instance
-                                      .collection("PremiumTips")
+                                      .collection("true")
                                       .snapshots(),
                                   builder: (context,
                                       AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -384,7 +384,7 @@ class _PremiumAdminState extends State<PremiumAdmin> {
                                                                     FirebaseFirestore
                                                                         .instance
                                                                         .collection(
-                                                                            "PremiumTips")
+                                                                            "true")
                                                                         .doc(finalData
                                                                             .id)
                                                                         .delete();

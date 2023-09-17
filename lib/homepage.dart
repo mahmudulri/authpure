@@ -136,7 +136,7 @@ class _HomepageState extends State<Homepage> {
 
           Map purchaseData = json
               .decode(purchaseDetails.verificationData.localVerificationData);
-          finalResult = purchaseData;
+          finalResult = purchaseData["acknowledged"];
 
           if (purchaseData["acknowledged"]) {
             print("restore purchase");
@@ -347,10 +347,13 @@ class _HomepageState extends State<Homepage> {
                     iApEngine.inAppPurchase.restorePurchases();
                     if (finalResult != null) {
                       print("token " + finalResult["purchaseToken"].toString());
-                      Get.to(() => PremiumTips());
+                      Get.to(() => PremiumTips(
+                            mylength: finalResult["acknowledged"],
+                          ));
                     } else {
                       print("Not bought");
                       print(box.read("checker"));
+
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -511,6 +514,13 @@ class _HomepageState extends State<Homepage> {
                 //     );
                 //   },
                 //   child: ComboButton(),
+                // ),
+
+                // ElevatedButton(
+                //   onPressed: () {
+                //     Get.to(() => PremiumTips());
+                //   },
+                //   child: Text("go pre"),
                 // ),
               ],
             ),

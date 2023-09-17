@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -5,8 +7,10 @@ import 'package:store_checker/store_checker.dart';
 import 'package:zest_betting_tips/admin.dart';
 import 'package:zest_betting_tips/homepage.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:zest_betting_tips/premium_tips.dart';
 import 'package:zest_betting_tips/sign_in_screen.dart';
 import 'package:zest_betting_tips/welcome.dart';
+import 'package:freerasp/freerasp.dart';
 
 import 'autcheck.dart';
 
@@ -17,19 +21,38 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
 
+  // ThreatCallback(
+  //   onAppIntegrity: () => exit(0),
+  //   onObfuscationIssues: () => exit(0),
+  //   onDebug: () => exit(0),
+  //   onDeviceBinding: () => exit(0),
+  //   onDeviceID: () => exit(0),
+  //   onHooks: () => exit(0),
+  //   onPasscode: () => exit(0),
+  //   onPrivilegedAccess: () => exit(0),
+  //   onSecureHardwareNotAvailable: () => exit(0),
+  //   onSimulator: () => exit(0),
+  //   onUnofficialStore: () => exit(0),
+  // );
+
   await Firebase.initializeApp(
-      // options: FirebaseOptions(
-      //   apiKey: "AIzaSyCnOv0A7yf3X1DThIYqF28ZOlkj13sJOzo",
-      //   authDomain: "pure-cd74e.firebaseapp.com",
-      //   projectId: "pure-cd74e",
-      //   storageBucket: "pure-cd74e.appspot.com",
-      //   messagingSenderId: "959704722972",
-      //   appId: "1:959704722972:web:4a434e1f94ad6f44b9b9d9",
-      //   measurementId: "G-BT8WLDEQ9H",
-      // ),
-      );
+    options: FirebaseOptions(
+      apiKey: "AIzaSyCnOv0A7yf3X1DThIYqF28ZOlkj13sJOzo",
+      authDomain: "pure-cd74e.firebaseapp.com",
+      projectId: "pure-cd74e",
+      storageBucket: "pure-cd74e.appspot.com",
+      messagingSenderId: "959704722972",
+      appId: "1:959704722972:web:4a434e1f94ad6f44b9b9d9",
+      measurementId: "G-BT8WLDEQ9H",
+    ),
+  );
 
   runApp(MyApp());
+
+  var myFile = new File('pubspec.yaml');
+// // assuming a utf8 encoding
+//   var numberOfLines = myFile.readAsLinesSync().length;
+//   print(numberOfLines);
 }
 
 class MyApp extends StatefulWidget {
@@ -121,7 +144,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: AuthCheck());
+        home: Welcome());
   }
 }
 
